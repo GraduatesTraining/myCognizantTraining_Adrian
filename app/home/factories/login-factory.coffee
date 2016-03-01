@@ -13,14 +13,18 @@ angular
     'localStorageService'
     'UsersIni'
     (localStorageService,UsersIni) ->
-      login: (user,password) ->
+      login: (user,password,state) ->
         if !localStorageService.get('users')
           UsersIni.usersIni()
         users = localStorageService.get('users')
         for u in users
           if user is u.user and password is u.password
             auth = true
+            idUser = u.id
             break
-        auth
+        @loginError = !auth
+        if auth is true
+          localStorageService.set('session',idUser)
+          state.go('main')
     ]
   

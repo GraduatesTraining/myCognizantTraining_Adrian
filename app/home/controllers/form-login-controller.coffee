@@ -7,23 +7,17 @@
  # @description
 
 ###
-class FormLoginCtrl
-  @$inject = ['Login','Register','localStorageService','UsersIni']
+class HomeCtrl
+  @$inject = ['Login','Register','localStorageService','UsersIni','$state']
   @loginError = false
   @registerError = false
   @regFields = false
-  constructor: (@Login,@Register,@localStorageService,@UsersIni) ->
-    @ctrlName = 'FormLoginCtrl'
+  constructor: (@Login,@Register,@localStorageService,@UsersIni,@$state) ->
+    @ctrlName = 'HomeCtrl'
   login: (user,password) ->
-    auth = @Login.login(user,password)
-    @loginError = !auth
-    if auth is true
-      alert "LOG SUCCESS"
+    @Login.login(user,password,@$state)
   register: (user,password,name,surname) ->
-    reg = @Register.register(user,password,name,surname)
-    @registerError = !reg
-    if reg is true
-      alert "REG SUCCESS"
+    @Register.register(user,password,name,surname,@$state)
   goRegister: ->
     @loginError = false
     @regFields = true
@@ -33,4 +27,4 @@ class FormLoginCtrl
     
 angular
   .module('myCognizantTrainingAdrian')
-  .controller 'FormLoginCtrl', FormLoginCtrl
+  .controller 'HomeCtrl', HomeCtrl

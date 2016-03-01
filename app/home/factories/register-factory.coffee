@@ -13,7 +13,7 @@ angular
     'localStorageService'
     'UsersIni'
     (localStorageService,UsersIni) ->
-      register: (user,password,name,surname) ->
+      register: (user,password,name,surname,state) ->
         reg = true
         if !localStorageService.get('users')
           UsersIni.usersIni()
@@ -33,5 +33,8 @@ angular
           }
           users.push(newUser)
           localStorageService.set('users',users)
-        reg
+        @registerError = !reg
+        if reg is true
+          localStorageService.set('session',newId)
+          state.go('main')
   ]

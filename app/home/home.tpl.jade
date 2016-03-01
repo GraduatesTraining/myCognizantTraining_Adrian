@@ -1,5 +1,5 @@
 div.mainContent
-  form.formLogin(name="loginForm" ng-controller="FormLoginCtrl as formLogin" novalidate)
+  form.formLogin(name="loginForm" ng-controller="HomeCtrl as home" novalidate)
     div(layout="row" layout-align="center center")
       img.logo(src="images/cognizantLogo.png")
     // Login Fields
@@ -10,7 +10,7 @@ div.mainContent
       label Password
       input.formFields(type='password' ng-model="password" required)
     // Register fields
-    div(ng-show="formLogin.regFields")
+    div(ng-show="home.regFields")
       md-input-container.md-block
         label Name
         input.formFields(type='text' ng-model="name" required)
@@ -18,24 +18,24 @@ div.mainContent
         label Surname
         input.formFields(type='password' ng-model="surname" required)
     // Login buttons
-    div(ng-hide="formLogin.regFields" layout="column" layout-align="center center")
+    div(ng-hide="home.regFields" layout="column" layout-align="center center")
       div.buttons
         md-content.buttons2
-          md-button.logBut(ng-click="formLogin.login(user,password)") LOGIN
+          md-button.logBut(ng-click="home.login(user,password)") LOGIN
       div.buttons
         md-content.buttons2
-          md-button.regBut(ng-click="formLogin.goRegister()") REGISTER
+          md-button.regBut(ng-click="home.goRegister()") REGISTER
     // Register buttons
-    div(ng-show="formLogin.regFields" layout="column" layout-align="center center")
+    div(ng-show="home.regFields" layout="column" layout-align="center center")
       div.buttons
         md-content.buttons2
-          md-button.regBut(ng-click="formLogin.register(user,password,name,surname)" ng-disabled="!loginForm.$valid") REGISTER
+          md-button.regBut(ng-click="home.register(user,password,name,surname)" ng-disabled="!loginForm.$valid") REGISTER
       div.buttons
         md-content.buttons2
-          md-button.logBut(ng-click="formLogin.goLogin()") CANCELAR
+          md-button.logBut(ng-click="home.goLogin()") CANCELAR
     // Error messages
-    div.errorMessages(layout="row" layout-align="center center" ng-show="formLogin.loginError || formLogin.registerError")
+    div.errorMessages(layout="row" layout-align="center center" ng-show="home.loginError || home.registerError")
       // Login failed
-      div(ng-show="formLogin.loginError") Login failed, email or password incorrect
+      div(ng-show="home.loginError") Login failed, email or password incorrect
       // Register failed
-      div(ng-show="formLogin.registerError") This username exist. Choose another one
+      div(ng-show="home.registerError") This username exist. Choose another one

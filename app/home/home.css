@@ -35,7 +35,7 @@ md-input-container.md-default-theme label{
   border-bottom: 1px solid #66CC33;
   color: #66CC33
 }
-.logBut:hover{
+.logBut:hover, .logBut:focus{
   background-color: #66CC33 !important;
   border-bottom: 1px solid #66CC33;
   color: white
@@ -46,7 +46,7 @@ md-input-container.md-default-theme label{
   border-bottom: 1px solid #66CCFF;
   color: #66CCFF
 }
-.regBut:hover{
+.regBut:hover, .regBut:focus{
   background-color: #66CCFF !important;
   border-bottom: 1px solid #66CCFF;
   color: white
