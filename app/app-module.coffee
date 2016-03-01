@@ -9,5 +9,6 @@ angular
   .module 'myCognizantTrainingAdrian', [
     'ngMaterial',
     'ui.router',
-    'home'
+    'home',
+    'LocalStorageModule'
   ]
