@@ -1,0 +1,63 @@
+.mainContent{
+  margin-top: 10%
+}
+
+ /* Form */
+.formLogin{
+  width: 40%;
+  margin: 4em auto;
+  padding: 3em 2em 2em 2em;
+  background: #fafafa;
+  border: 1px solid #ebebeb
+}
+.logo{
+  width: 30%;
+  margin-bottom: 3%
+}
+.formFields{
+  border-bottom: solid 1px #CCC !important;
+  color: #CCC
+}
+md-input-container.md-default-theme label{
+    color: #CCC !important;
+}
+
+/* Buttons */
+.buttons{
+  width: 100%;
+}
+.buttons2{
+  background: #fafafa
+}
+.logBut{
+  margin: 0 0 1em 0;
+  width: 100%;
+  border-bottom: 1px solid #66CC33;
+  color: #66CC33
+}
+.logBut:hover{
+  background-color: #66CC33 !important;
+  border-bottom: 1px solid #66CC33;
+  color: white
+}
+.regBut{
+  margin: 0 0 1em 0;
+  width: 100%;
+  border-bottom: 1px solid #66CCFF;
+  color: #66CCFF
+}
+.regBut:hover{
+  background-color: #66CCFF !important;
+  border-bottom: 1px solid #66CCFF;
+  color: white
+}
+
+/* Error messages */
+.errorMessages{
+  margin-top: 5%;
+  color: red;
+  background-color: rgba(255,0,0,0.1);
+  border: 1px solid red;
+  padding: 5%;
+  text-align: center
+}
