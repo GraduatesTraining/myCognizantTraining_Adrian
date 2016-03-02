@@ -11,7 +11,8 @@ angular
     'ui.router',
     'home',
     'LocalStorageModule',
-    'main'
+    'main',
+    'services'
   ]
   .config ($mdThemingProvider) ->
     $mdThemingProvider.theme('default')

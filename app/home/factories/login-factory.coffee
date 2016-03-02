@@ -9,9 +9,7 @@
 ###
 angular
   .module 'myCognizantTrainingAdrian'
-  .factory 'Login', [
-    'localStorageService'
-    'UsersIni'
+  .factory 'Login',
     (localStorageService,UsersIni) ->
       login: (user,password,state) ->
         if !localStorageService.get('users')
@@ -26,5 +24,4 @@ angular
           localStorageService.set('session',idUser)
           state.go('main')
         auth
-    ]
-  
+        
