@@ -33,8 +33,8 @@ angular
           }
           users.push(newUser)
           localStorageService.set('users',users)
-        @registerError = !reg
         if reg is true
           localStorageService.set('session',newId)
           state.go('main')
+        reg
   ]

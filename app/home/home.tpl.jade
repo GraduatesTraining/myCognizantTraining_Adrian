@@ -1,41 +1,42 @@
-div.mainContent
-  form.formLogin(name="loginForm" ng-controller="HomeCtrl as home" novalidate)
+.main-content
+  form.form-login(name="loginForm" novalidate)
     div(layout="row" layout-align="center center")
       img.logo(src="images/cognizantLogo.png")
     // Login Fields
     md-input-container.md-block
       label User
-      input.formFields(type='text' ng-model="user" required)
+      input.form-fields(type='text' ng-model="user" required)
     md-input-container.md-block
       label Password
-      input.formFields(type='password' ng-model="password" required)
+      input.form-fields(type='password' ng-model="password" required)
     // Register fields
     div(ng-show="home.regFields")
       md-input-container.md-block
         label Name
-        input.formFields(type='text' ng-model="name" required)
+        input.form-fields(type='text' ng-model="name" required)
       md-input-container.md-block
         label Surname
-        input.formFields(type='password' ng-model="surname" required)
+        input.form-fields(type='password' ng-model="surname" required)
     // Login buttons
     div(ng-hide="home.regFields" layout="column" layout-align="center center")
       div.buttons
         md-content.buttons2
-          md-button.logBut(ng-click="home.login(user,password)") LOGIN
+          md-button.log-but(ng-click="home.login(user,password)") LOGIN
       div.buttons
         md-content.buttons2
-          md-button.regBut(ng-click="home.goRegister()") REGISTER
+          md-button.reg-but(ng-click="home.goRegister()") REGISTER
     // Register buttons
     div(ng-show="home.regFields" layout="column" layout-align="center center")
       div.buttons
         md-content.buttons2
-          md-button.regBut(ng-click="home.register(user,password,name,surname)" ng-disabled="!loginForm.$valid") REGISTER
+          md-button.reg-but(ng-click="home.register(user,password,name,surname)" ng-disabled="!loginForm.$valid") REGISTER
       div.buttons
         md-content.buttons2
-          md-button.logBut(ng-click="home.goLogin()") CANCELAR
+          md-button.log-but(ng-click="home.goLogin()") CANCEL
     // Error messages
-    div.errorMessages(layout="row" layout-align="center center" ng-show="home.loginError || home.registerError")
+    div.error-messages(layout="row" layout-align="center center" ng-show="home.loginError || home.registerError")
       // Login failed
       div(ng-show="home.loginError") Login failed, email or password incorrect
       // Register failed
       div(ng-show="home.registerError") This username exist. Choose another one
+      

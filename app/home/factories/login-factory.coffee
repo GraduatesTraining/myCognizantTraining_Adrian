@@ -22,9 +22,9 @@ angular
             auth = true
             idUser = u.id
             break
-        @loginError = !auth
         if auth is true
           localStorageService.set('session',idUser)
           state.go('main')
+        auth
     ]
   

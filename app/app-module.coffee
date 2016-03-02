@@ -13,3 +13,11 @@ angular
     'LocalStorageModule',
     'main'
   ]
+  .config ($mdThemingProvider) ->
+    $mdThemingProvider.theme('default')
+      .primaryPalette('grey')
+      return
+  .config ($mdIconProvider) ->
+    $mdIconProvider.defaultIconSet 'images/icons/mdi.svg'
+    return
+  

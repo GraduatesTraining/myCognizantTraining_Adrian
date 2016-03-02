@@ -15,9 +15,11 @@ class HomeCtrl
   constructor: (@Login,@Register,@localStorageService,@UsersIni,@$state) ->
     @ctrlName = 'HomeCtrl'
   login: (user,password) ->
-    @Login.login(user,password,@$state)
+    auth = @Login.login(user,password,@$state)
+    @loginError = !auth
   register: (user,password,name,surname) ->
-    @Register.register(user,password,name,surname,@$state)
+    reg = @Register.register(user,password,name,surname,@$state)
+    @registerError = !reg
   goRegister: ->
     @loginError = false
     @regFields = true

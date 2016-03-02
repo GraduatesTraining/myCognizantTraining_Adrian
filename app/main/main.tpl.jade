@@ -1,2 +1,28 @@
-h2 main
-p {{main.ctrlName}}
+div
+  md-toolbar
+    .md-toolbar-tools
+      img.logo-main(src="images/cognizantLogo2.png")
+      span(flex)
+      h2(ng-bind="main.username")
+      span(flex)
+      md-icon(md-svg-icon='email')
+  div(layout='row' layout-sm="column")
+    div(flex-gt-sm='20')
+      md-list
+        a.menu-element(ui-sref="main.exams")
+          md-list-item
+            md-icon(md-svg-icon='file-multiple')
+            p  Exams
+        md-divider
+        a.menu-element(ui-sref="main.stats")
+          md-list-item(ui-sref="main.stats")
+            md-icon(md-svg-icon='chart-line')
+            p  Stats
+        md-divider
+    div(layout="column" flex-gt-sm="80")
+      div(flex)
+        ui-view
+      div(layout="row" layout-sm="column")
+        div(flex) LEFT (TOP) container
+        div(flex) RIGHT (BOTTOM) container
+        
