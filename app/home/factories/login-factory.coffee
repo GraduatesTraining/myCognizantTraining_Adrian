@@ -10,8 +10,8 @@
 angular
   .module 'myCognizantTrainingAdrian'
   .factory 'Login',
-    (localStorageService,UsersIni) ->
-      login: (user,password,state) ->
+    (localStorageService,UsersIni,$state) ->
+      login: (user,password) ->
         if !localStorageService.get('users')
           UsersIni.usersIni()
         users = localStorageService.get('users')
@@ -22,6 +22,6 @@ angular
             break
         if auth is true
           localStorageService.set('session',idUser)
-          state.go('main')
+          $state.go('main')
         auth
         

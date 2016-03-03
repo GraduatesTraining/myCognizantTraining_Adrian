@@ -1,7 +1,7 @@
 div
   md-toolbar
     .md-toolbar-tools
-      img.logo-main(src="images/cognizantLogo2.png")
+      img.user-img(src="images/users/_default.png")
       span(flex)
       h2(ng-bind="username")
       span(flex)
@@ -11,7 +11,7 @@ div
     div(flex-gt-sm='20')
       md-list
         a.menu-element(ui-sref="main.exams")
-          md-list-item
+          md-list-item(md-expando)
             md-icon(md-svg-icon='file-multiple')
             p  Exams
         md-divider

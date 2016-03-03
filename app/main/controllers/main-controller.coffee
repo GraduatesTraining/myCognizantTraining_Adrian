@@ -8,8 +8,8 @@
 
 ###
 class MainCtrl
-  @$inject = ['Session','localStorageService','Logout']
-  constructor: (@Session,@localStorageService,@Logout) ->
+  @$inject = ['Session','Logout']
+  constructor: (@Session,@Logout) ->
     @ctrlName = 'MainCtrl'
   logout: ->
     @Logout.logout()

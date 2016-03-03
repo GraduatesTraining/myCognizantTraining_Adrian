@@ -9,11 +9,9 @@
 ###
 angular
   .module 'myCognizantTrainingAdrian'
-  .factory 'Register', [
-    'localStorageService'
-    'UsersIni'
-    (localStorageService,UsersIni) ->
-      register: (user,password,name,surname,state) ->
+  .factory 'Register',
+    (localStorageService,UsersIni,$state) ->
+      register: (user,password,name,surname) ->
         reg = true
         if !localStorageService.get('users')
           UsersIni.usersIni()
@@ -35,6 +33,6 @@ angular
           localStorageService.set('users',users)
         if reg is true
           localStorageService.set('session',newId)
-          state.go('main')
+          $state.go('main')
         reg
-  ]
+        

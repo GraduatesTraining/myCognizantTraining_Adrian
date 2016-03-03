@@ -8,17 +8,17 @@
 
 ###
 class HomeCtrl
-  @$inject = ['Login','Register','localStorageService','UsersIni','$state']
+  @$inject = ['Login','Register','UsersIni']
   @loginError = false
   @registerError = false
   @regFields = false
-  constructor: (@Login,@Register,@localStorageService,@UsersIni,@$state) ->
+  constructor: (@Login,@Register,@UsersIni) ->
     @ctrlName = 'HomeCtrl'
   login: (user,password) ->
-    auth = @Login.login(user,password,@$state)
+    auth = @Login.login(user,password)
     @loginError = !auth
   register: (user,password,name,surname) ->
-    reg = @Register.register(user,password,name,surname,@$state)
+    reg = @Register.register(user,password,name,surname)
     @registerError = !reg
   goRegister: ->
     @loginError = false
