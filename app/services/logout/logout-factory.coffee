@@ -13,4 +13,3 @@ angular
     logout: ->
       localStorageService.remove 'session'
       $state.go 'home'
-      

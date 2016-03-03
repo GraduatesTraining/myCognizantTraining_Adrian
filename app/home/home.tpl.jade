@@ -5,18 +5,18 @@
     // Login Fields
     md-input-container.md-block
       label User
-      input.form-fields(type='text' ng-model="user" required)
+      input(type='text' ng-model="user" required)
     md-input-container.md-block
       label Password
-      input.form-fields(type='password' ng-model="password" required)
+      input(type='password' ng-model="password" required)
     // Register fields
     div(ng-show="home.regFields")
       md-input-container.md-block
         label Name
-        input.form-fields(type='text' ng-model="name" required)
+        input(type='text' ng-model="name" required)
       md-input-container.md-block
         label Surname
-        input.form-fields(type='password' ng-model="surname" required)
+        input(type='password' ng-model="surname" required)
     // Login buttons
     div(ng-hide="home.regFields" layout="column" layout-align="center center")
       div.buttons
@@ -39,4 +39,3 @@
       div(ng-show="home.loginError") Login failed, email or password incorrect
       // Register failed
       div(ng-show="home.registerError") This username exist. Choose another one
-      

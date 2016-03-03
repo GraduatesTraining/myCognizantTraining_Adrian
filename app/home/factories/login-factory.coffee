@@ -24,4 +24,3 @@ angular
           localStorageService.set 'session', idUser
           $state.go 'main'
         auth
-        

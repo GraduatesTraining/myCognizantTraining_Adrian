@@ -15,10 +15,10 @@ class HomeCtrl
   constructor: (@Login,@Register,@UsersIni) ->
     @ctrlName = 'HomeCtrl'
   login: (user,password) ->
-    auth = @Login.login(user,password)
+    auth = @Login.login user, password
     @loginError = !auth
   register: (user,password,name,surname) ->
-    reg = @Register.register(user,password,name,surname)
+    reg = @Register.register user, password, name, surname
     @registerError = !reg
   goRegister: ->
     @loginError = false

@@ -24,4 +24,3 @@ angular
         templateUrl: 'main/views/main-inbox.tpl.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-        

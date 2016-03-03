@@ -17,4 +17,3 @@ class MainCtrl
 angular
   .module('main')
   .controller 'MainCtrl', MainCtrl
-  

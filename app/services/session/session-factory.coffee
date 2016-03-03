@@ -22,4 +22,3 @@ angular
       name = user.name
       surname = user.surname
       $rootScope.username = name + ' ' + surname
-      

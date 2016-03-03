@@ -29,10 +29,9 @@ angular
             "name": name
             "surname": surname
           }
-          users.push(newUser)
+          users.push newUser
           localStorageService.set 'users', users
         if reg is true
           localStorageService.set 'session', newId
           $state.go 'main'
         reg
-        
