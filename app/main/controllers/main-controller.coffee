@@ -8,9 +8,11 @@
 
 ###
 class MainCtrl
-  @$inject = ['Session','localStorageService']
-  constructor: (@Session,@localStorageService) ->
+  @$inject = ['Session','localStorageService','Logout']
+  constructor: (@Session,@localStorageService,@Logout) ->
     @ctrlName = 'MainCtrl'
+  logout: ->
+    @Logout.logout()
 
 angular
   .module('main')

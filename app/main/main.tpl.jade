@@ -15,9 +15,14 @@ div
             p  Exams
         md-divider
         a.menu-element(ui-sref="main.stats")
-          md-list-item(ui-sref="main.stats")
+          md-list-item
             md-icon(md-svg-icon='chart-line')
             p  Stats
+        md-divider
+        a.menu-element(ng-click="main.logout()")
+          md-list-item
+            md-icon(md-svg-icon='logout')
+            p  Logout
         md-divider
     div(layout="column" flex-gt-sm="80")
       div(flex)
