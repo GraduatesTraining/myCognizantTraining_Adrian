@@ -11,13 +11,12 @@ angular
   .module 'services'
   .factory 'Session', (localStorageService,$state,$rootScope) ->
     idUser = localStorageService.get 'session'
-    if !idUser
+    unless idUser
       $state.go 'home'
     else
       users = localStorageService.get 'users'
       for u,i in users
-        if u.id is idUser
-          pos = i
+        pos = i if u.id is idUser
       user = users[pos]
       name = user.name
       surname = user.surname
