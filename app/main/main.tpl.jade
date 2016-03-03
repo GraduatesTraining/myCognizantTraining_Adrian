@@ -5,7 +5,8 @@ div
       span(flex)
       h2(ng-bind="username")
       span(flex)
-      md-icon(md-svg-icon='email')
+      a.menu-element(ui-sref="main.inbox")
+        md-icon(md-svg-icon='email')
   div(layout='row' layout-sm="column")
     div(flex-gt-sm='20')
       md-list
@@ -19,7 +20,7 @@ div
             md-icon(md-svg-icon='chart-line')
             p  Stats
         md-divider
-        a.menu-element(ng-click="main.logout()")
+        a.menu-element(ng-click="main.logout()" style="cursor:pointer")
           md-list-item
             md-icon(md-svg-icon='logout')
             p  Logout

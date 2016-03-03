@@ -19,4 +19,9 @@ angular
         templateUrl: 'main/views/main-stats.tpl.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
+      .state 'main.inbox',
+        url: '/inbox'
+        templateUrl: 'main/views/main-inbox.tpl.html'
+        controller: 'MainCtrl'
+        controllerAs: 'main'
         
