@@ -11,6 +11,6 @@ angular
   .module 'services'
   .factory 'Logout', (localStorageService,$state) ->
     logout: ->
-      localStorageService.remove('session')
-      $state.go('home')
+      localStorageService.remove 'session'
+      $state.go 'home'
       

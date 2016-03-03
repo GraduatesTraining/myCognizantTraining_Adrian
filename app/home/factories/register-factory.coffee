@@ -13,9 +13,9 @@ angular
     (localStorageService,UsersIni,$state) ->
       register: (user,password,name,surname) ->
         reg = true
-        if !localStorageService.get('users')
+        if !localStorageService.get 'users'
           UsersIni.usersIni()
-        users = localStorageService.get('users')
+        users = localStorageService.get 'users'
         for u in users
           if user is u.user
             reg = false
@@ -30,9 +30,9 @@ angular
             "surname": surname
           }
           users.push(newUser)
-          localStorageService.set('users',users)
+          localStorageService.set 'users', users
         if reg is true
-          localStorageService.set('session',newId)
-          $state.go('main')
+          localStorageService.set 'session', newId
+          $state.go 'main'
         reg
         

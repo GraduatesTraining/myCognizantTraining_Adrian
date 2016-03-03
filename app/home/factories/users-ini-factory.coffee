@@ -22,5 +22,5 @@ angular
                     "surname": ""
                   }
                 ]
-        localStorageService.set('users',users)
+        localStorageService.set 'users', users
   ]
