@@ -7,39 +7,26 @@
  # @description
 
 ###
-class FormLoginCtrl
-  constructor: ->
-    @ctrlName = 'FormLoginCtrl'
+class HomeCtrl
+  @$inject = ['Login','Register','UsersIni']
+  @loginError = false
+  @registerError = false
+  @regFields = false
+  constructor: (@Login,@Register,@UsersIni) ->
+    @ctrlName = 'HomeCtrl'
+  login: (user,password) ->
+    auth = @Login.login user, password
+    @loginError = !auth
+  register: (user,password,name,surname) ->
+    reg = @Register.register user, password, name, surname
+    @registerError = !reg
+  goRegister: ->
+    @loginError = false
+    @regFields = true
+  goLogin: ->
+    @registerError = false
+    @regFields = false
     
 angular
   .module('myCognizantTrainingAdrian')
-  .controller 'FormLoginCtrl', [
-    'Login'
-    'Register'
-    'localStorageService'
-    'UsersIni'
-    (Login,Register,localStorageService,UsersIni) ->
-      @loginError = false
-      @registerError = false
-      @regFields = false
-      @login = (user,password) ->
-        auth = Login.login(user,password)
-        @loginError = !auth
-        if auth is true
-          alert "LOG SUCCESS"
-        return
-      @goRegister = ->
-        @loginError = false
-        @regFields = true
-        return
-      @goLogin = ->
-        @regFields = false
-        return
-      @register = (user,password,name,surname) ->
-        reg = Register.register(user,password,name,surname)
-        @registerError = !reg
-        if reg is true
-          alert "REG SUCCESS"
-        return
-      return
-  ]
+  .controller 'HomeCtrl', HomeCtrl

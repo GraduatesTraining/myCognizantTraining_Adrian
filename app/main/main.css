@@ -1,0 +1,14 @@
+/* Header */
+.user-img{
+  margin: auto;
+  position: relative;
+  height: 100%;
+  width: auto;
+  margin-right: 2%
+}
+
+/* Menu */
+.menu-element{
+  text-decoration: none;
+  color: grey
+}

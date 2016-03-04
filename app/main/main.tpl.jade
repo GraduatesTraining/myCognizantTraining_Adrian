@@ -1,0 +1,60 @@
+div
+  md-toolbar
+    .md-toolbar-tools
+      img.user-img(src="images/cognizantLogo2.png")
+      h2(ng-bind="username")
+      span(flex)
+      a.menu-element(ui-sref="main.inbox")
+        md-icon(md-svg-icon='email')
+  div(layout='row' layout-sm="column")
+    div(flex-gt-sm='20')
+      md-list
+        a.menu-element(ui-sref="main.profile")
+          md-list-item
+            md-icon(md-svg-icon='account-convert')
+            p  Profile
+        md-divider
+        a.menu-element(ng-click="main.logout()" style="cursor:pointer")
+          md-list-item
+            md-icon(md-svg-icon='account-off')
+            p  Logout
+        md-divider
+        md-divider
+        md-divider
+        a.menu-element(ui-sref="main.exams")
+          md-list-item
+            md-icon(md-svg-icon='file-multiple')
+            p  Exams
+        md-divider
+        a.menu-element(ui-sref="main.stats")
+          md-list-item
+            md-icon(md-svg-icon='chart-line')
+            p  Stats
+        md-divider
+        //md-menu
+          md-button.md-icon-button(ng-click="$mdOpenMenu($event)" aria-label='Open Exams')
+            md-icon(md-svg-icon='file-multiple')
+          md-menu-content
+            md-menu-item
+              md-button(aria-label='HTML5')
+                md-icon(md-svg-icon='file-multiple')
+                | HTML5
+            md-menu-item
+              md-button(aria-label='CSS3')
+                md-icon(md-svg-icon='file-multiple')
+                | CSS3
+            md-menu-item
+              md-button(aria-label='JavaScript')
+                md-icon(md-svg-icon='file-multiple')
+                | JavaScript
+            md-menu-item
+              md-button(aria-label='CoffeeScript')
+                md-icon(md-svg-icon='file-multiple')
+                | CoffeeScript
+            md-menu-item
+              md-button(aria-label='AngularJS')
+                md-icon(md-svg-icon='file-multiple')
+                | AngularJS
+    div(layout="column" flex-gt-sm="80")
+      div(flex)
+        ui-view

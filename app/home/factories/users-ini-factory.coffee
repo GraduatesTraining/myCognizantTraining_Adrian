@@ -15,12 +15,12 @@ angular
       usersIni: ->
         users = [
                   {
-                    "id": 0
+                    "id": 1
                     "user": "admin"
                     "password": "1234"
                     "name": ""
                     "surname": ""
                   }
                 ]
-        localStorageService.set('users',users)
+        localStorageService.set 'users', users
   ]

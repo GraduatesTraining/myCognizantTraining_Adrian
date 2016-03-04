@@ -10,5 +10,12 @@ angular
     'ngMaterial',
     'ui.router',
     'home',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'main',
+    'services'
   ]
+  .config ($mdThemingProvider) ->
+    $mdThemingProvider.theme 'default'
+      .primaryPalette 'grey'
+  .config ($mdIconProvider) ->
+    $mdIconProvider.defaultIconSet 'images/icons/mdi.svg'
