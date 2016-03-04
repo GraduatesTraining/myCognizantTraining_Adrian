@@ -2,7 +2,7 @@
 
 ###*
  # @ngdoc object
- # @name main.controller:MainCtrl
+ # @name cognizantApp.controller:FormLoginCtrl
 
  # @description
 
@@ -10,10 +10,10 @@
 class MainCtrl
   @$inject = ['Session','Logout']
   constructor: (@Session,@Logout) ->
-    @ctrlName = 'MainCtrl'
+    @ctrlName = 'HomeCtrl'
   logout: ->
     @Logout.logout()
-
+    
 angular
-  .module('main')
+  .module('myCognizantTrainingAdrian')
   .controller 'MainCtrl', MainCtrl

@@ -22,5 +22,10 @@ angular
       .state 'main.inbox',
         url: '/inbox'
         templateUrl: 'main/views/main-inbox.tpl.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+        controller: 'MainInboxCtrl'
+        controllerAs: 'inbox'
+      .state 'main.profile',
+        url: '/profile'
+        templateUrl: 'main/views/main-profile.tpl.html'
+        controller: 'MainProfileCtrl'
+        controllerAs: 'profile'
